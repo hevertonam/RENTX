@@ -57,7 +57,7 @@ class ImportCategoryUseCase{
             if(!existCategory){
                 this.categoriesRepository.create({
                     nome,
-                    descricao
+                    descricao,
                 })
             }
             
