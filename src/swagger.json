@@ -8,7 +8,45 @@
         "contact":{
         "email":"hevertonam2018@gmail.com"
         }
+    },
+    "paths":{
+      "/categories":{
+      "post": {
+        "summary": "Create a category",
+        "description": "Create a new category",
+        "requestBody": {
+          "content":{
+            "apllication/json":{
+              "schema":{
+                "type":"object",
+                "properties":{
+                  "name":{
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "category name sample",
+                  "description":"category description sample"
+                }
+              }
+            }
+          }
+        },
+        "responses":{
+          "201":{
+            "description": "Created"
+          },
+          "500": {
+            "description": "Category Already exists"
+        }
+      }
+      }
     }
 }
+}
+    
 
 
