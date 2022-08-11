@@ -1,10 +1,19 @@
 import {v4 as uuidv4} from 'uuid' 
+import{Column, CreateDateColumn, Entity, PrimaryColumn} from "typeorm";
 
+@Entity("categories")
  class Category
   {
-         id?: string;
+       @PrimaryColumn()
+        id?: string;
+       
+        @Column()
         nome: string;
+
+        @Column()
         descricao: string;
+
+        @CreateDateColumn()
         data_criacao: Date;
 
        constructor(){
