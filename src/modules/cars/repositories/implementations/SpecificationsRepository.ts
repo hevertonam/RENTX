@@ -18,9 +18,11 @@ class SpecificationsRepository implements ISpecificationsRepository{
         });
 
         this.specifications.push(specification);
+
     }
 
     findByName(nome: string):   Specification {
+
         const specification = this.specifications.find(specification=>specification.nome===nome);
         return specification;   
     };
