@@ -3,13 +3,8 @@ import {Category} from "../../entities/Category";
 import { ICategoriesRepository,ICreateCategoryDTO } from "../ICategoriesRepository";
 
 
-class CategoriesRepository implements ICategoriesRepository
-{
-
-private repository:Repository<Category>;
-
-private static INSTANCE: CategoriesRepository;
-
+class CategoriesRepository implements ICategoriesRepository{
+    private repository:Repository<Category>;
  
 constructor(){
     this.repository = getRepository(Category);
@@ -34,7 +29,7 @@ return categories;
 
 
 async findByName(nome: string):  Promise<Category>{
-console.log("find by name");
+
     const category = await this.repository.findOne({ nome });
     return category;
 }

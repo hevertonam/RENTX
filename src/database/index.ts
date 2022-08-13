@@ -4,6 +4,6 @@ interface IOptions {
   host: string;
 }
 
-console.log("arquivo database");
+
 
 createConnection();
