@@ -1,20 +1,21 @@
 
 import { Response, Request } from "express"; 
+import { container} from "tsyringe";
 import { CreateSpecificationUseCase } from "./CreateSpecificationUseCase";
 
-class CreateEspecificationController {
-
-    constructor (private createSpecificationUseCase: CreateSpecificationUseCase){}
+class CreateSpecificationController {
 
     handle(request: Request, response: Response):Response{
     
     const {nome, descricao}=request.body;
+
+    const createSpecificationUseCase = container.resolve(CreateSpecificationUseCase )
     
-    this.createSpecificationUseCase.execute({nome,descricao});
+    createSpecificationUseCase.execute({nome,descricao});
 
         return response.status(201).send(); 
     }
 }
 
 
-export {CreateEspecificationController};
+export {CreateSpecificationController};
