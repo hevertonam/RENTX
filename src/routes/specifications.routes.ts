@@ -6,6 +6,7 @@ import { CreateSpecificationController } from
 
  const createSpecificationController = new CreateSpecificationController();
 
- specificationsRoutes.post("/", createSpecificationController.handle);
+ specificationsRoutes.post(
+    "/specification", createSpecificationController.handle);
 
  export{specificationsRoutes};
