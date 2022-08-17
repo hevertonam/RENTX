@@ -10,7 +10,7 @@ email: string;
 password:string;
 }
 
-interface IResponse{
+interface IResponse{  
     user:{
         name:string;
         email:string
