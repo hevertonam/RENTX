@@ -86,7 +86,44 @@
         }
          
       }
+    },
+"/specifications":{
+  "post":{
+    "tags":["modelo"],
+    "summary":"create especification",
+    "description":"create a new especification",
+    "requestBody":{
+      "content":{
+        "apllication/json":{
+          "schema":{
+            "$ref": "#/definitions/Specification"
+          }
+        }
+      }
+    },
+    "responses":{
+      "201":{
+        "description":"Created"
+      },
+      "500":{
+        "description":"ja existe"
+      }
     }
+  }
+}
+},
+"definitions":{
+  "Specification":{
+    "type":"object",
+    "properties":{
+      "nome":{
+        "type":"string"
+      },
+      "description":{
+        "type":"string"
+      }
+    }
+  }
 }
 }
     
