@@ -3,6 +3,7 @@ import { inject, injectable } from "tsyringe";
 import { IUsersRepository } from "../../../repositories/IUsersRepository";
 
 import{sign} from "jsonwebtoken";
+import { AppError } from "../../../../../../errors/AppError";
 
 
 interface IRequest{
@@ -30,13 +31,13 @@ async execute({email, password}:IRequest): Promise<IResponse>{
     const user = await this.usersRepository.findByEmail(email);
 
     if (!user){
-        throw new Error ("Email or password incorrect!");
+        throw new AppError ("Email or password incorrect!");
     }
 
     const passwordMatch = await compare(password, user.password);
 
     if(!passwordMatch){
-        throw new Error ("Email or password incorrect!");
+        throw new AppError ("Email or password incorrect!");
     }
 
     //chave pc
