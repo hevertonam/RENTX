@@ -15,12 +15,15 @@ class User {
 
     @Column()
     password: string;
-
+ 
     @Column()
     driver_license: string;
 
     @Column()
     isAdmin: boolean;
+
+    @Column()
+    avatar:string;
 
     @CreateDateColumn()
     created_at: Date;   
