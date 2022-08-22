@@ -1,12 +1,13 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateCars1661002123048 implements MigrationInterface {
+export class CreateCars1661186149114 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
                 name:"cars",
                 columns:[
+
                     {
                         name:"id",
                         type: "uuid",
@@ -62,13 +63,13 @@ export class CreateCars1661002123048 implements MigrationInterface {
                         onUpdate:"SET NULL"
                     }
                 ]
-
             })
         )
+
     }
+    
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("cars");
     }
 
 }
