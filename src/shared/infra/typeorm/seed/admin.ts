@@ -1,6 +1,7 @@
 import{hash} from "bcrypt"
-import  createConnection  from "../index";
 import{v4 as uuidV4} from "uuid";
+import  createConnection  from "../index";
+
 
 
 async function create(){
@@ -11,7 +12,7 @@ async function create(){
     
     await connection.query(
         `INSERT INTO USERS(id, name, email, password, "isAdmin", created_at, driver_license)
-        values('${id}, 'admin', 'admin@admin.com.br', '${password}, true, 'now()','XXXXXX')
+        values('${id}, 'admin', 'admin@rentx.com', '${password}, true, 'now()','XXXXXX')
         `
         );
 }
